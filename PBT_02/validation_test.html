@@ -1,0 +1,37 @@
+<form>
+  <h3>Kiểm tra Validation HTML5</h3>
+
+  <div>
+    <label>1. Required:</label><br>
+    <input type="text" required value="">
+  </div>
+  <br>
+
+  <div>
+    <label>2. Email:</label><br>
+    <input type="email" value="abc">
+  </div>
+  <br>
+
+  <div>
+    <label>3. Number:</label><br>
+    <input type="number" min="1" max="10" value="15">
+  </div>
+  <br>
+
+  <div>
+    <label>4. Pattern:</label><br>
+    <input type="text" pattern="[0-9]{10}" value="abc123" title="Vui lòng nhập đúng 10 chữ số">
+  </div>
+  <br>
+
+  <div>
+    <label>5. Minlength:</label><br>
+    <input type="password" minlength="8" value="123">
+  </div>
+  <br>
+
+  <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+    Gửi để kiểm tra lỗi
+  </button>
+</form>
