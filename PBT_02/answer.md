@@ -31,3 +31,44 @@ TH5:
 dự đoán : trình duyệt báo lỗi yêu cầu tăng độ dài văn bản (thường ít nhất 8 ký tự)
 tại sao : thuộc tính minlenght = 8 bắt buộ chuỗi nhập vào phải có 8 ký tự trở lên, trong kho 123 chỉ có 3 ký tự
 Nguồn tham khảo: 07_forms_interactive.md: Mục HTML5 Validation & Attributes.
+
+Câu A3:
+1.Screen reader sẽ đọc nội dung của thẻ <label> khi người dùng focus vào ô nhập liệu, giúp họ biết chính xác ô đó dùng để nhập thông tin gì (ví dụ: "Email").
+2.Khi nào dùng: Dùng để nhóm các phần tử có liên quan logic với nhau trong một form lớn, giúp cấu trúc form mạch lạc và dễ hiểu hơn cho cả người dùng bình thường và công cụ hỗ trợ.
+Ví dụ cụ thể: Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
+  <fieldset>
+      <legend>Thông tin giao hàng</legend>
+      <label for="city">Thành phố:</label>
+      <input type="text" id="city" name="city">
+      <label for="addr">Địa chỉ chi tiết:</label>
+      <input type="text" id="addr" name="addr">
+  </fieldset>
+3.aria-label: Dùng khi 1 phẩn tử tương tác(button) không có văn bản hiển thị trên màn hình nhưng vẫn cần mô tả cho screen reader vì aria-label sẽ ghi đè nội dung của <label>, có thể gây nhầm lẫn nếu thông tin không khớp nhau
+Nguồn tham khảo: 07_forms_interactive.md: Mục Accessibility — Form cho mọi người.
+
+Câu A4:
+1.Cơ chế: Thuộc tính này cho phép trình duyệt trì hoãn việc tải hình ảnh cho đến khi người dùng cuộn trang đến gần vị trí của ảnh đó.
+Cải thiện: Giúp tăng tốc độ tải trang ban đầu , tiết kiệm băng thông cho người dùng và giảm tải cho server.
+Không nên dùng: Không nên dùng cho các ảnh nằm ở phần đầu trang như Banner chính hoặc Logo, vì sẽ làm chậm hiển thị nội dung quan trọng nhất khi vừa mở trang.
+2.Khả năng tương thích: Mỗi trình duyệt hỗ trợ các định dạng video khác nhau; việc cung cấp nhiều nguồn giúp đảm bảo video luôn chạy được trên mọi nền tảng.
+3 Format video web phổ biến:
+1,mp4 (H.264): Phổ biến nhất, hỗ trợ hầu hết trình duyệt.
+2,webm: Nhẹ, chất lượng cao, tối ưu cho Chrome và Firefox.
+3,ogg: Một định dạng mã nguồn mở khác cho web.
+3.Công dụng: Cung cấp văn bản thay thế nếu ảnh bị lỗi không hiển thị và giúp Screen Reader đọc mô tả ảnh cho người khiếm thị.
+Viết alt tốt cho 3 trường hợp:
+1,Ảnh sản phẩm iPhone 16: alt="Điện thoại iPhone 16 màu Titan Sa mạc góc nhìn nghiêng".
+2,Ảnh trang trí (decorative): alt="" (Để trống để Screen Reader bỏ qua, tránh gây nhiễu thông tin).
+3,Ảnh biểu đồ doanh thu Q1/2026: alt="Biểu đồ cột thể hiện doanh thu Quý 1 năm 2026 ".
+
+Câu A5:
+1.Thẻ <img> độc lập: Chỉ đơn thuần là chèn một hình ảnh vào trang web. Trình duyệt và các công cụ tìm kiếm xem nó như một phần tử đồ họa thông thường
+Thẻ <figure>: Là một đơn vị nội dung độc lập. Nó bao bọc hình ảnh và các nội dung liên quan, giúp báo hiệu cho trình duyệt rằng đây là một khối tư liệu, sơ đồ hoặc ảnh minh họa có ý nghĩa cụ thể.
+2.
+<figure>
+    <img src="Doraemon.jpg" 
+         alt="Truyện Doraemon phiên bản mới nhất" 
+         loading="lazy">
+    <figcaption>Hình 1: truyện Doraemon phiên bản mới nhất - Tác giả Dale Carnegie</figcaption>
+</figure>
+Nguồn tham khảo: 06_graphics_multimedia.md: Mục Multimedia Elements — <figure> & <figcaption>.

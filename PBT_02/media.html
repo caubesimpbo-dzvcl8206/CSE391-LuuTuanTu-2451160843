@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Multimedia - PBT_02</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        header { text-align: center; margin-bottom: 30px; }
+        section { background: white; padding: 20px; margin-bottom: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h2 { border-left: 5px solid #007bff; padding-left: 15px; color: #333; margin-top: 0; }
+        
+        /* Ảnh Responsive */
+        img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+        
+        .product-gallery { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        figure { margin: 0; background: #fff; border: 1px solid #ddd; padding: 10px; border-radius: 8px; width: 260px; }
+        figcaption { text-align: center; font-size: 0.9em; margin-top: 10px; color: #666; font-weight: 500; }
+        
+        /* Video Responsive Container */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+        .video-wrapper iframe, .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        audio { width: 100%; margin-top: 10px; }
+        .logo-svg { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-svg">
+            <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="5" width="90" height="90" rx="15" fill="#007bff" />
+                <circle cx="50" cy="50" r="30" fill="white" opacity="0.9" />
+                <path d="M40 35 L65 50 L40 65 Z" fill="#007bff" /> </svg>
+        </div>
+        <h1>Góc Thư Giãn & Công Nghệ</h1>
+    </header>
+
+    <section>
+        <h2>Bộ sưu tập thiết bị</h2>
+        <div class="product-gallery">
+            <figure>
+                <img src="https://picsum.photos/id/119/400/300" alt="Bàn phím cơ hiện đại" loading="lazy">
+                <figcaption>Bàn phím cơ Gaming</figcaption>
+            </figure>
+            <figure>
+                <img src="https://picsum.photos/id/160/400/300" alt="Điện thoại smartphone mới" loading="lazy">
+                <figcaption>Smartphone Flagship</figcaption>
+            </figure>
+            <figure>
+                <img src="https://picsum.photos/id/2/400/300" alt="Màn hình làm việc chuyên nghiệp" loading="lazy">
+                <figcaption>Màn hình đồ họa 4K</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section>
+        <h2>Nhạc Chill Cuối Năm (YouTube)</h2>
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/VWpmXjIG6qs?si=cplz3KcPus1ildkr" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section>
+        <h2>Video Clip Giới Thiệu</h2>
+        <div class="video-wrapper">
+            <video controls poster="https://picsum.photos/id/1015/900/500">
+                <source src="intro-video.mp4" type="video/mp4">
+                <source src="intro-video.webm" type="video/webm">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
+    </section>
+
+    <section>
+        <h2>Âm thanh giới thiệu</h2>
+        <audio controls>
+            <source src="audio-preview.mp3" type="audio/mpeg">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+    </section>
+
+</body>
+</html>
