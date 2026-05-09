@@ -1,22 +1,20 @@
 Phần A: Kiểm tra đọc hiểu
 
 Câu A1:
-Các bước khi truy cập https://shopee.vn:
-B1.Trình duyệt gửi request từ client
-B2.Request đi qua router → nhà mạng → Internet
-B3.Server nhận request tại data center
-B4.Server xử lý yêu cầu
-B5.Server trả về response
-B6.Trình duyệt nhận dữ liệu
-B7.Render giao diện trên màn hình
+-Các bước khi truy cập https://shopee.vn:
+1,Request của Minh xuất phát từ laptop → đi qua router WiFi nhà trọ
+2,Qua nhà mạng VNPT → chạy xuyên cáp quang dưới đáy Thái Bình Dương
+3,Đến data center của Shopee
+4,Server xử lý: "Bạn muốn xem trang chủ Shopee"
+5,Response chạy ngược lại: cáp quang → VNPT → router → laptop
+6,Chrome nhận file HTML, CSS, JS → render ra giao diện → Minh thấy Shopee
 Nguồn tham khảo: 01_introduction_html_universe.md phần "Cuộc hành trình 0.3 giây"
-Tab Network hiển thị:
+-Tab Network hiển thị:
 Danh sách các request
 Status Code
 Loại tài nguyên
 Thời gian tải
 Kích thước file
-Ảnh trong screenshots
 Nguồn tham khảo: 01_introduction_html_universe.md phần 4.3. Developer Tools (F12) — "Kính hiển vi" cho website
 
 Câu A2
