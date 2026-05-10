@@ -261,3 +261,50 @@ Các cột giữ nguyên:
 250 + 500 + 250 = 1000px
 Padding và border nằm bên trong width.
 => Layout đúng 1000px
+
+Câu B3:
+10 Rules + Specificity
+Rule	Selector	          Specificity
+1	    p	                  (0,0,1)
+2	    .text	              (0,1,0)
+3	    .highlight	          (0,1,0)
+4	     p.text	              (0,1,1)
+5	     p.highlight	      (0,1,1)
+6	     .text.highlight	  (0,2,0)
+7	     p.text.highlight	  (0,2,1)
+8	     #demo	              (1,0,0)
+9	     p#demo	              (1,0,1)
+10	     p#demo.text.highlight (1,2,1)
+
+Element cuối cùng hiển thị màu gì?
+Màu cuối cùng: gold
+Lý do:
+Rule số 10 có specificity lớn nhất:
+(1,2,1)
+CSS sẽ ưu tiên selector có specificity cao hơn tất cả selector khác.
+Nếu thay đổi thứ tự rules trong file CSS thì sao?
+Trường hợp specificity khác nhau
+Kết quả KHÔNG đổi.
+
+Ví dụ:
+#demo vẫn thắng .text
+p#demo.text.highlight vẫn thắng tất cả
+vì specificity cao hơn.
+
+Trường hợp specificity bằng nhau
+Thứ tự mới có ảnh hưởng.
+Ví dụ:
+.text {
+    color: blue;
+}
+
+.highlight {
+    color: green;
+}
+Cả hai đều có specificity:
+(0,1,0)
+Rule viết sau sẽ thắng.
+Nếu .highlight viết sau .text
+→ màu xanh lá.
+Nếu .text viết sau .highlight
+→ màu xanh dương.
