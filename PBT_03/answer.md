@@ -55,3 +55,141 @@ Chọn tất cả thẻ <p> là con trực tiếp của <article>:
 Chọn: "Home"
 8,top-bar.dark h1
 Chọn: "ShopTLU"
+
+Câu A3:
+Trường hợp 1: content-box (mặc định)
+.box-1 {
+    width: 400px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}
+Trong content-box:
+width chỉ tính content
+padding và border được cộng thêm ra ngoài
+Công thức:
+Rendered width=width+padding−left+padding−right+border−left+border−right
+=400+20+20+5+5=450px
+→ Chiều rộng hiển thị = 450px
+Không gian chiếm trên trang còn tính cả margin:
+450+10+10=470px
+→ Không gian chiếm trên trang = 470px
+
+Trường hợp 2: border-box
+.box-2 {
+    box-sizing: border-box;
+    width: 400px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}
+Trong border-box:
+width đã bao gồm:
+content
+padding
+border
+Nên:
+→ Chiều rộng hiển thị = 400px
+Kích thước content thực tế:
+400−(20+20)−(5+5)
+=400−40−10=350px
+→ Kích thước content thực tế = 350px
+Không gian chiếm trên trang:
+400+10+10=420px
+→ Không gian chiếm trên trang = 420px
+
+Trường hợp 3: Margin Collapse
+.box-a { margin-bottom: 25px; }
+.box-b { margin-top: 40px; }
+Hai margin dọc liền nhau sẽ collapse.
+Browser KHÔNG cộng:
+25+40
+Mà chỉ lấy margin lớn hơn:
+max(25,40)=40px
+→ Khoảng cách giữa box-a và box-b = 40px
+
+Vì sao KHÔNG phải 65px?
+Vì theo cơ chế margin collapsing của CSS:
+Hai margin theo chiều dọc giữa các block liền kề sẽ gộp lại
+Browser chỉ dùng giá trị lớn nhất
+Điều này giúp tránh khoảng cách bị “phình to” khi nhiều block xếp chồng.
+Nâng cao: margin âm
+.box-a { margin-bottom: -10px; }
+.box-b { margin-top: 40px; }
+Khi có margin âm:
+40+(−10)=30px
+→ Khoảng cách = 30px
+
+Câu A4:
+Rule A
+p { color: black; }
+ID: 0
+Class: 0
+Element: 1 (p)
+→ Specificity:
+(0, 0, 1)
+
+Rule B
+.price { color: blue; }
+ID: 0
+Class: 1 (.price)
+Element: 0
+→ Specificity:
+(0, 1, 0)
+
+Rule C
+#main-price { color: red; }
+ID: 1
+Class: 0
+Element: 0
+→ Specificity:
+(1, 0, 0)
+
+Rule D
+p.price { color: green; }
+ID: 0
+Class: 1 (.price)
+Element: 1 (p)
+→ Specificity:
+(0, 1, 1)
+
+Element sẽ có màu gì?
+<p class="price" id="main-price">
+Element match tất cả rules.
+
+So specificity:
+Rule	Score
+A	(0,0,1)
+B	(0,1,0)
+C	(1,0,0)
+D	(0,1,1)
+
+CSS ưu tiên:
+!important
+Specificity lớn hơn
+Nếu bằng nhau → rule viết sau thắng
+
+So sánh:
+(1,0,0)
+lớn hơn tất cả.
+→ Rule C thắng.
+→ Màu cuối cùng: đỏ (red)
+
+Nếu thêm inline style
+<p class="price" id="main-price" style="color: orange;">
+
+Inline style có specificity đặc biệt:
+(1, 0, 0, 0)
+cao hơn selector thường.
+→ Element sẽ có:
+→ Màu cam (orange)
+
+Nếu Rule A thêm !important
+p { color: black !important; }
+Thì thứ tự ưu tiên đổi thành:
+!important
+specificity
+
+Dù Rule A specificity thấp hơn, nhưng có !important.
+→ Rule A thắng tất cả rule thường.
+→ Màu cuối cùng: đen (black)
