@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectors Test</title>
+</head>
+<body>
+
+<div id="app">
+    <header class="top-bar dark">
+        <h1>ShopTLU</h1>
+        <nav>
+            <a href="/" class="active">Home</a>
+            <a href="/products">Products</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="product">
+            <h2>iPhone 16</h2>
+            <p class="price">25.990.000đ</p>
+            <p>Mô tả sản phẩm...</p>
+        </article>
+
+        <article class="product featured">
+            <h2>MacBook Pro</h2>
+            <p class="price">45.990.000đ</p>
+            <p>Mô tả sản phẩm...</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    console.log("1.", document.querySelectorAll("h1"));
+    console.log("2.", document.querySelectorAll(".price"));
+    console.log("3.", document.querySelectorAll("#app header"));
+    console.log("4.", document.querySelectorAll("nav a:first-child"));
+    console.log("5.", document.querySelectorAll(".product.featured h2"));
+    console.log("6.", document.querySelectorAll("article > p"));
+    console.log("7.", document.querySelectorAll('a[href="/"]'));
+    console.log("8.", document.querySelectorAll(".top-bar.dark h1"));
+</script>
+
+</body>
+</html>
