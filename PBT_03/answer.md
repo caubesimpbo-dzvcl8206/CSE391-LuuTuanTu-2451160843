@@ -193,3 +193,71 @@ specificity
 Dù Rule A specificity thấp hơn, nhưng có !important.
 → Rule A thắng tất cả rule thường.
 → Màu cuối cùng: đen (black)
+
+Câu B1:
+- Các loại selector đã sử dụng
+1, Element selector
+- body
+- table
+- footer
+
+2, Class selector
+- .profile-section
+- .active
+
+3, ID selector
+- #main-header
+
+4, Descendant selector
+- nav a
+
+5, Pseudo-class selector
+- nav a:hover
+- tr:hover
+- tr:nth-child(even)
+
+Câu B2:
+Phần 1 — Content-box vs Border-box
+
+Hộp 1 (content-box)
+- Width CSS: 300px
+- Padding: 20px trái + 20px phải
+- Border: 5px trái + 5px phải
+Chiều rộng thực tế:
+300 + 20 + 20 + 5 + 5 = 350px
+=> Hộp 1 (content-box): chiều rộng thực tế = 350px
+
+Hộp 2 (border-box)
+
+Width đã bao gồm:
+- content
+- padding
+- border
+=> Hộp 2 (border-box): chiều rộng thực tế = 300px
+
+Giải thích sự khác biệt
+- content-box:
+  width chỉ tính phần content.
+  Padding và border được cộng thêm ra ngoài.
+
+- border-box:
+  width đã bao gồm content + padding + border.
+  Kích thước render thực tế không tăng thêm.
+
+Phần 2 — Layout 3 cột
+Trường hợp KHÔNG dùng border-box
+Sidebar:
+250 + 15 + 15 + 1 + 1 = 282px
+Content:
+500 + 20 + 20 + 1 + 1 = 542px
+Ads:
+250 + 15 + 15 + 1 + 1 = 282px
+Tổng:
+282 + 542 + 282 = 1106px
+=> Layout bị vượt quá 1000px
+
+Trường hợp dùng border-box
+Các cột giữ nguyên:
+250 + 500 + 250 = 1000px
+Padding và border nằm bên trong width.
+=> Layout đúng 1000px
