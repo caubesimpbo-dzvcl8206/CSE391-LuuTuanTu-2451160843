@@ -308,3 +308,186 @@ Nếu .highlight viết sau .text
 → màu xanh lá.
 Nếu .text viết sau .highlight
 → màu xanh dương.
+
+Câu C1:
+1, Tính chiều rộng thực tế
+Sidebar
+content-box ⇒ width KHÔNG gồm padding + border
+width: 300
+padding-left + right: 20 + 20 = 40
+border-left + right: 1 + 1 = 2
+
+Tổng:
+300+40+2=342px
+→ Sidebar thực tế = 342px
+
+Content
+width: 660
+padding-left + right: 30 + 30 = 60
+border-left + right: 1 + 1 = 2
+
+Tổng:
+660+60+2=722px
+→ Content thực tế = 722px
+
+2, Tại sao layout bị vỡ?
+
+Tổng chiều rộng:
+342+722=1064px
+Trong khi container chỉ:
+960px
+
+→ Tổng lớn hơn container.
+→ Browser không đủ chỗ đặt 2 block cùng hàng.
+→ .content bị đẩy xuống dòng mới.
+
+3, Hai cách sửa
+Cách 1 — Dùng border-box
+Ý tưởng:
+width sẽ bao gồm:
+content
+padding
+border
+
+Khi đó:
+sidebar = đúng 300px
+content = đúng 660px
+
+Tổng:
+300+660=960px
+
+Cách 2 — Không dùng border-box
+Giữ content-box, nhưng giảm width content.
+
+Ta cần:
+960−342=618px
+
+Content đang có:
+padding: 60
+border: 2
+Nên width content phải:
+618−60−2=556px
+
+→ đổi:
+.content {
+    width: 556px;
+}
+
+Câu C2:
+1, “Sản phẩm A” (h2.title.highlight)
+
+HTML:
+<h2 class="title highlight">Sản phẩm A</h2>
+Font-size
+Các rule liên quan:
+body { font-size: 16px; }
+.container { font-size: 14px; }
+.card .title { font-size: 20px; }
+Cascade:
+body → 16px
+.container → 14px (inherit xuống)
+.card .title → 20px (áp trực tiếp lên h2)
+Rule .card .title thắng inheritance.
+→ font-size = 20px
+
+Color
+Các rule liên quan:
+.card { color: blue; }
+#featured .title { color: red; }
+.highlight { color: green !important; }
+Cascade:
+.card
+→ color: blue (inherit)
+#featured .title
+→ color: red
+.highlight
+→ color: green !important
+!important ưu tiên cao nhất.
+→ color = green
+Kết quả
+"Sản phẩm A"
+font-size: 20px
+color: green
+
+2, “Mô tả sản phẩm” (p trong featured card)
+HTML:
+<p>Mô tả sản phẩm</p>
+Color
+Rule liên quan:
+.card {
+    color: blue;
+}
+
+.card p {
+    color: inherit;
+}
+Quá trình inheritance
+.card có:
+color: blue;
+nên toàn bộ text bên trong card sẽ kế thừa màu xanh.
+Sau đó:
+.card p {
+    color: inherit;
+}
+
+inherit nghĩa là:
+→ lấy color từ parent (.card)
+→ parent = blue
+→ color = blue
+Kết quả
+"Mô tả sản phẩm"
+color: blue
+
+3, “Sản phẩm B” (h2.title)
+
+HTML:
+<h2 class="title">Sản phẩm B</h2>
+Font-size
+Rule:
+.card .title {
+    font-size: 20px;
+}
+→ áp trực tiếp lên h2
+→ font-size = 20px
+Color
+Không có:
+#featured .title
+vì h2 này không nằm trong #featured
+Nên color được inherit từ:
+.card {
+    color: blue;
+}
+→ color = blue
+
+Kết quả
+"Sản phẩm B"
+font-size: 20px
+color: blue
+
+4, “Mô tả sản phẩm B” (p.highlight)
+
+HTML:
+<p class="highlight">Mô tả sản phẩm B</p>
+Color
+Rules:
+.card p {
+    color: inherit;
+}
+.highlight {
+    color: green !important;
+}
+Cascade
+.card p
+→ color: inherit
+→ nhận blue từ .card
+
+Nhưng:
+.highlight {
+    color: green !important;
+}
+có !important
+→ thắng hoàn toàn.
+→ color = green
+Kết quả
+"Mô tả sản phẩm B"
+color: green
