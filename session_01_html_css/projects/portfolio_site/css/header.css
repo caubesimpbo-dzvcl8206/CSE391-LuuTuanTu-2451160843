@@ -1,0 +1,35 @@
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:30px 55px;
+
+    background:white;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--color-primary);
+}
+
+nav{
+    display:flex;
+    gap:50px;
+}
+
+nav a{
+    color:var(--color-dark);
+    font-size:1.5rem;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--color-primary);
+}
