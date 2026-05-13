@@ -1,5 +1,5 @@
 .hero{
-    min-height:100vh;
+    min-height:85vh;
 
     display:flex;
     flex-direction:column;
@@ -18,7 +18,7 @@
 }
 
 .hero h1{
-    font-size:6rem;
+    font-size:4rem;
     font-weight:700;
     margin-bottom:30px;
 }
@@ -28,7 +28,7 @@
 }
 
 .hero p{
-    font-size:2rem;
+    font-size:1.25rem;
     opacity:0.8;
     margin-bottom:60px;
 }
@@ -37,10 +37,10 @@
     background:white;
     color:var(--color-primary);
 
-    padding:22px 55px;
+    padding:16px 38px;
     border-radius:50px;
 
-    font-size:1.5rem;
+    font-size:1.1rem;
     font-weight:600;
 
     transition:0.3s;
@@ -49,4 +49,21 @@
 .cta-button:hover{
     transform:scale(1.05);
     box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media(max-width:768px){
+
+    .hero{
+        min-height:75vh;
+        padding:0 20px;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
 }
