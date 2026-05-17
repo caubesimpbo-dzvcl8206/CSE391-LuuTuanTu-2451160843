@@ -1,0 +1,40 @@
+.comments-section .card{
+    transition:0.3s ease;
+}
+
+.comments-section .card:hover{
+    transform:translateY(-3px);
+}
+
+.comments-section .btn-link{
+    color:#6366f1;
+    font-weight:500;
+}
+
+.comments-section .btn-link:hover{
+    color:#4f46e5;
+}
+
+.comment.reply{
+    border-color:#e2e8f0 !important;
+}
+
+.comment img.rounded-circle{
+    object-fit:cover;
+}
+
+@media(max-width:768px){
+
+    .comment.reply.ms-5{
+        margin-left:1rem !important;
+    }
+
+    .comments-section .d-flex{
+        flex-direction:column;
+    }
+
+    .comments-section img.rounded-circle{
+        margin-bottom:1rem;
+    }
+
+}
