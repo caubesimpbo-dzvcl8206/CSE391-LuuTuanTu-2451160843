@@ -85,3 +85,15 @@ body{
     border-color:var(--custom-primary-hover);
 
 }
+
+.py-section{
+
+    padding-top:5rem;
+
+    padding-bottom:5rem;
+
+}
+
+.gap-custom{
+    gap:2rem;
+}
