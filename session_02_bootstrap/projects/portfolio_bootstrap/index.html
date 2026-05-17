@@ -1,294 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="./css/variables.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/hero.css">
-    <link rel="stylesheet" href="./css/about.css">
-    <link rel="stylesheet" href="./css/skills.css">
-    <link rel="stylesheet" href="./css/portfolio.css">
-    <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <title>Portfolio Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/custom-theme.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Lưu Tuấn Tú</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <section class="hero">
-        <h1>
-            Hello, I'm <span>Tú Lưu</span>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-2 text-primary" href="#">
+            Atus
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto gap-lg-3">
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="#portfolio">
+                        Portfolio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<section
+class="hero-section min-vh-100 d-flex align-items-center justify-content-center text-center text-white">
+
+    <div class="container">
+
+        <h1 class="display-2 fw-bold mb-3">
+            Hi, I'm
+            <span class="text-warning">
+                Atus
+            </span>
         </h1>
 
-        <p>
-            Gamer | Coder | Footballer
+        <p class="lead mb-4 opacity-75">
+            Coder | Gamer | Footballer
         </p>
 
-        <a href="#" class="cta-button">
-            View My Work
+        <a href="#portfolio"
+           class="btn btn-light btn-lg rounded-pill px-5 py-3 fw-semibold">
+            View My Work →
         </a>
-    </section>
-<section id="about" class="about-section">
+    </div>
+</section>
+
+<section id="about" class="py-5">
+
     <div class="container">
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="./images/profile.jpg" alt="Profile Photo">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-5 text-center">
+
+                <img src="./images/profile.jpg"
+                     class="img-fluid rounded-circle shadow-lg profile-img"
+                     alt="Profile">
+
             </div>
-            <div class="about-content">
-                <h2>About Me</h2>
+
+            <div class="col-lg-7">
+
+                <h2 class="fw-bold mb-4">
+                    About Me
+                </h2>
+
                 <p class="lead">
-                    Tôi là một cầu thủ bóng đá chuyên nghiệp với kinh nghiệm 5 năm
-                    ,bình luận viên mõm nhất 66HTTT2 và là game thủ.
+                    I'm a passionate developer with 3+ years of experience
+                    building modern web applications.
                 </p>
+
+                <p class="text-secondary">
+                    Specialized in Frontend development with React and Vue.
+                    Also experienced in Backend with Node.js and Python.
+                    I love creating beautiful responsive interfaces.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="skills" class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-5">
+            My Skills
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="mb-4">
+
+                    <div class="d-flex justify-content-between mb-2">
+
+                        <span class="fw-semibold">HTML5</span>
+                        <span class="text-primary fw-semibold">95%</span>
+
+                    </div>
+
+                    <div class="progress skill-progress">
+
+                        <div class="progress-bar"
+                             style="width:95%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="mb-4">
+
+                    <div class="d-flex justify-content-between mb-2">
+
+                        <span class="fw-semibold">CSS3</span>
+                        <span class="text-primary fw-semibold">90%</span>
+
+                    </div>
+
+                    <div class="progress skill-progress">
+
+                        <div class="progress-bar"
+                             style="width:90%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="mb-4">
+
+                    <div class="d-flex justify-content-between mb-2">
+
+                        <span class="fw-semibold">JavaScript</span>
+                        <span class="text-primary fw-semibold">85%</span>
+
+                    </div>
+
+                    <div class="progress skill-progress">
+
+                        <div class="progress-bar"
+                             style="width:85%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="mb-4">
+
+                    <div class="d-flex justify-content-between mb-2">
+
+                        <span class="fw-semibold">React</span>
+                        <span class="text-primary fw-semibold">80%</span>
+
+                    </div>
+
+                    <div class="progress skill-progress">
+
+                        <div class="progress-bar"
+                             style="width:80%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="portfolio" class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-5">
+            My Portfolio
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden portfolio-card">
+
+                    <img src="./images/P1.jpg"
+                         class="card-img-top"
+                         alt="Project">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            E-Commerce Website
+                        </h5>
+
+                        <p class="text-muted">
+                            React + Node.js
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden portfolio-card">
+
+                    <img src="./images/P2.jpg"
+                         class="card-img-top"
+                         alt="Project">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Mobile UI
+                        </h5>
+
+                        <p class="text-muted">
+                            Flutter App
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden portfolio-card">
+
+                    <img src="./images/P3.jpg"
+                         class="card-img-top"
+                         alt="Project">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Dashboard Design
+                        </h5>
+
+                        <p class="text-muted">
+                            UI/UX Design
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden portfolio-card">
+
+                    <img src="./images/P4.jpg"
+                         class="card-img-top"
+                         alt="Project">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Portfolio Website
+                        </h5>
+
+                        <p class="text-muted">
+                            HTML + Bootstrap
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden portfolio-card">
+
+                    <img src="./images/P5.jpg"
+                         class="card-img-top"
+                         alt="Project">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Admin Panel
+                        </h5>
+
+                        <p class="text-muted">
+                            React Dashboard
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden portfolio-card">
+
+                    <img src="./images/P6.jpg"
+                         class="card-img-top"
+                         alt="Project">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Branding Design
+                        </h5>
+
+                        <p class="text-muted">
+                            Adobe XD
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="py-5 bg-light">
+
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">
+            Get In Touch
+        </h2>
+        <div class="row g-5 align-items-start">
+
+            <div class="col-lg-5">
+
+                <h3 class="fw-bold mb-4">
+                    Contact Information
+                </h3>
+
+                <p class="text-secondary">
+                    Feel free to reach out. I'm always open to discussing new projects.
+                </p>
+
+                <p class="mt-4">
+                    📧 atus123456.email@example.com
+                </p>
+
                 <p>
-                    Tôi hay chơi Liqi và bình luận về MU, tôi là fan cứng MU.
-                    Tôi hay chơi bóng đá với vị trí xách nước bổ cam.
+                    📍 Hanoi, Vietnam
                 </p>
+
             </div>
+
+            <div class="col-lg-7">
+
+                <form class="bg-white p-4 rounded-4 shadow-sm">
+
+                    <div class="mb-4">
+
+                        <label class="form-label fw-semibold">
+                            Full Name
+                        </label>
+
+                        <input type="text"
+                               class="form-control form-control-lg"
+                               placeholder="Nguyễn Trang Linh">
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label fw-semibold">
+                            Email Address
+                        </label>
+
+                        <input type="email"
+                               class="form-control form-control-lg"
+                               placeholder="linhxinh@example.com">
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label fw-semibold">
+                            Message
+                        </label>
+
+                        <textarea class="form-control"
+                                  rows="6"
+                                  placeholder="Tell me about your project..."></textarea>
+
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100 rounded-4">
+                        Send Message →
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
-<section id="skills" class="skills-section">
+
+<footer class="footer-section py-5">
     <div class="container">
-        <h2>My Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-top">
-                    <span>HTML5</span>
-                    <span>95%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="95%"></div>
-                </div>
+        <div class="row align-items-center text-center text-lg-start">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h2 class="fw-bold text-white">
+                    Atus
+                </h2>
             </div>
-            <div class="skill-item">
-                <div class="skill-top">
-                    <span>CSS3</span>
-                    <span>90%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90%"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-top">
-                    <span>JavaScript</span>
-                    <span>85%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="85%"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-top">
-                    <span>React</span>
-                    <span>80%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="80%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="portfolio" class="portfolio-section">
-    <div class="container">
-        <h2>My Portfolio</h2>
-        <div class="portfolio-grid">
-            <a href="#lightbox-1" class="portfolio-item">
-                <img src="./images/P1.jpg" alt="Project 1">
-            </a>
-            <a href="#lightbox-2" class="portfolio-item">
-                <img src="./images/P2.jpg" alt="Project 2">
-            </a>
-            <a href="#lightbox-3" class="portfolio-item">
-                <img src="./images/P3.jpg" alt="Project 3">
-            </a>
-            <a href="#lightbox-4" class="portfolio-item">
-                <img src="./images/P4.jpg" alt="Project 4">
-            </a>
-            <a href="#lightbox-5" class="portfolio-item">
-                <img src="./images/P5.jpg" alt="Project 5">
-            </a>
-            <a href="#lightbox-6" class="portfolio-item">
-                <img src="./images/P6.jpg" alt="Project 6">
-            </a>
-        </div>
-    </div>
-<div id="lightbox-1" class="lightbox">
-    <img src="./images/P1.jpg" alt="Project 1">
-    <a href="#" class="lightbox-close">&times;</a>
-</div>
-
-<div id="lightbox-2" class="lightbox">
-    <img src="./images/P2.jpg" alt="Project 2">
-    <a href="#" class="lightbox-close">&times;</a>
-</div>
-
-<div id="lightbox-3" class="lightbox">
-    <img src="./images/P3.jpg" alt="Project 3">
-    <a href="#" class="lightbox-close">&times;</a>
-</div>
-
-<div id="lightbox-4" class="lightbox">
-    <img src="./images/P4.jpg" alt="Project 4">
-    <a href="#" class="lightbox-close">&times;</a>
-</div>
-
-<div id="lightbox-5" class="lightbox">
-    <img src="./images/P5.jpg" alt="Project 5">
-    <a href="#" class="lightbox-close">&times;</a>
-</div>
-
-<div id="lightbox-6" class="lightbox">
-    <img src="./images/P6.jpg" alt="Project 6">
-    <a href="#" class="lightbox-close">&times;</a>
-</div>
-
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2>Get In Touch</h2>
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>
-                    Feel free to reach out.
-                    I'm always open to discussing new projects.
-                </p>
-                <div class="info-item">
-                    <span class="icon">📧</span>
-                    <span>atus123456.email@example.com</span>
-                </div>
-                <div class="info-item">
-                    <span class="icon">📍</span>
-                    <span>Hanoi, Vietnam</span>
-                </div>
-
-            </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input
-                    type="text"
-                    id="name"
-                    placeholder="John Doe"
-                    required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input
-                    type="email"
-                    id="email"
-                    placeholder="john@example.com"
-                    required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea
-                    id="message"
-                    rows="6"
-                    placeholder="Tell me about your project..."
-                    required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">
-                    Send Message →
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                Tú Lưu
-            </div>
-            <p class="footer-tagline">
+            <div class="col-lg-4 mb-4 mb-lg-0 text-white-50">
                 Building digital experiences
-            </p>
-            <div class="social-links">
-                <a href="#" class="social-link">
-                    <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.37 0 12
-                        c0 5.3 3.44 9.8 8.2 11.38
-                        .6.11.8-.26.8-.58v-2.23
-                        c-3.34.73-4.03-1.42-4.03-1.42
-                        -.55-1.39-1.34-1.76-1.34-1.76
-                        -1.09-.74.08-.73.08-.73
-                        1.21.08 1.84 1.24 1.84 1.24
-                        1.07 1.83 2.81 1.3 3.49 1
-                        .11-.78.42-1.31.76-1.61
-                        -2.66-.3-5.47-1.33-5.47-5.93
-                        0-1.31.47-2.38 1.24-3.22
-                        -.13-.3-.54-1.52.11-3.17
-                        0 0 1.01-.32 3.3 1.23
-                        .96-.27 1.98-.4 3-.4
-                        1.02 0 2.05.14 3 .4
-                        2.29-1.55 3.3-1.23 3.3-1.23
-                        .65 1.65.24 2.87.12 3.17
-                        .77.84 1.24 1.91 1.24 3.22
-                        0 4.61-2.81 5.62-5.48 5.92
-                        .43.37.82 1.1.82 2.22v3.29
-                        c0 .32.19.69.8.58
-                        C20.57 21.8 24 17.3 24 12
-                        24 5.37 18.63 0 12 0z"/>
-                    </svg>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="#" class="social-icon">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
 
-                </a>
-                <a href="#" class="social-link">
-                    <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="currentColor">
-                        <path d="M4.98 3.5C4.98
-                        4.88 3.86 6 2.48 6
-                        1.1 6 0 4.88 0 3.5
-                        0 2.12 1.1 1 2.48 1
-                        3.86 1 4.98 2.12 4.98 3.5zM0
-                        8h5v16H0V8zm7.5
-                        0h4.8v2.2h.1
-                        c.7-1.3 2.3-2.7
-                        4.8-2.7 5.1 0
-                        6 3.3 6 7.7V24h-5v-7.6
-                        c0-1.8 0-4.1-2.5-4.1
-                        -2.5 0-2.9 1.9-2.9 4V24h-5V8z"/>
-                    </svg>
-
-                </a>
-                <a href="#" class="social-link">
-                    <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="currentColor">
-                        <path d="M12 13L2
-                        6.76V18h20V6.76L12
-                        13zm10-9H2l10
-                        6 10-6z"/>
-                    </svg>
-                </a>
             </div>
         </div>
-        <div class="footer-bottom">
-    <p>&copy; 2026 Tú Lưu. All rights reserved.</p>
-</div>
+        <hr class="border-secondary my-4">
+        <p class="text-center text-white-50 mb-0">
+© 2026 Atus. All rights reserved.
+        </p>
+    </div>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 <script src="./js/main.js"></script>
+
+</body>
 </html>
