@@ -57,3 +57,31 @@ body{
     background:#667eea;
     transform:translateY(-5px);
 }
+
+:root{
+
+    --bs-primary:#14b8a6;
+    --bs-primary-rgb:20,184,166;
+
+    --bs-secondary:#64748b;
+    --bs-secondary-rgb:100,116,139;
+
+    --custom-primary-hover:#0d9488;
+
+}
+
+.btn-primary{
+
+    background:var(--bs-primary);
+
+    border-color:var(--bs-primary);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--custom-primary-hover);
+
+    border-color:var(--custom-primary-hover);
+
+}
