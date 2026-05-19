@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopTLU - Demo CSS Positioning</title>
+    <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">ShopTLU</div>
+        <nav class="nav">
+            <a href="#">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="sticky-content">
+                <h3>Danh mục bài tập</h3>
+                <ul>
+                    <li class="active"><a href="#">CSS Positioning</a></li>
+                    <li><a href="#">Flexbox Layout</a></li>
+                    <li><a href="#">Grid System</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2>Danh sách sản phẩm tiêu biểu</h2>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="badge-hot">HOT</div>
+                    <div class="product-thumb"></div>
+                    <div class="product-info">
+                        <div class="title">Laptop Gaming TLU</div>
+                        <div class="price">24.990.000đ</div>
+                    </div>
+                </div>
+                
+                <div class="product-card"><div class="product-thumb"></div><div class="title">Sản phẩm mẫu 2</div></div>
+                <div class="product-card"><div class="product-thumb"></div><div class="title">Sản phẩm mẫu 3</div></div>
+                <div class="product-card"><div class="product-thumb"></div><div class="title">Sản phẩm mẫu 4</div></div>
+            </div>
+        </main>
+    </div>
+
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
+</body>
+</html>
