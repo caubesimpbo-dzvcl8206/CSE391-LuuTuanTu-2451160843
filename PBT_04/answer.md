@@ -120,3 +120,11 @@ Plaintext
 | [   Item 7 (1fr)   ]   ( Trống )           ( Trống )      |
 +-----------------------------------------------------------+
 
+Phần C
+
+Câu C1:
+1. Navigation bar ngang (Logo + Menu + Buttons)Lựa chọn: FlexboxGiải thích ngắn gọn: Thanh điều hướng là layout dàn hàng theo 1 chiều (chiều ngang). Flexbox xử lý cực tốt việc căn giữa các phần tử theo chiều dọc (align-items: center) và tự động phân bổ khoảng trống linh hoạt giữa các cụm (justify-content: space-between).
+2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)Lựa chọn: GridGiải thích ngắn gọn: Đây là layout 2 chiều (cả hàng và cột) tạo thành một hệ thống lưới hoàn hảo. Với CSS Grid, bạn chỉ cần định nghĩa số cột cố định bằng grid-template-columns: repeat(3, 1fr);, các ảnh mới khi tải thêm vào sẽ tự động xếp vào ô tiếp theo và tự rớt dòng mà không cần tính toán lề hay lo bị lệch dòng.
+3. Layout blog: Main content + SidebarLựa chọn: Grid (hoặc Flexbox tùy độ phức tạp, nhưng Grid tối ưu hơn cho bộ khung lớn)Giải thích ngắn gọn: Bản chất của cấu trúc trang (Page Layout) tổng thể thường dựa trên các vùng cố định. Dùng Grid giúp bạn quy hoạch rõ ràng độ rộng của hai vùng bằng grid-template-columns: 1fr 300px; (hoặc tỷ lệ phần trăm) và dễ dàng kiểm soát khoảng cách giữa chúng bằng thuộc tính gap mà không lo vỡ bố cục khi thay đổi nội dung bên trong.
+4. Footer với 4 cột thông tinLựa chọn: Grid (Dành cho layout cố định) hoặc Flexbox (Nếu muốn co giãn sang thiết bị di động) $\rightarrow$ Grid được khuyến khích hơn cho màn hình lớn.Giải thích ngắn gọn: Việc chia chính xác 4 cột có độ rộng bằng nhau hoặc theo tỷ lệ cố định là thế mạnh của Grid (grid-template-columns: repeat(4, 1fr);). Nó đảm bảo các cột thẳng hàng tuyệt đối từ trên xuống dưới. Tuy nhiên, khi chuyển sang màn hình nhỏ (Responsive), Grid đổi sang repeat(2, 1fr) hoặc 1fr cực kỳ gọn gàng.
+5. Card sản phẩm (Ảnh trên, Text giữa, Nút dưới — Nút luôn dính đáy)Lựa chọn: FlexboxGiải thích ngắn gọn: Đây là layout sắp xếp theo 1 chiều dọc (flex-direction: column). Flexbox là lựa chọn hoàn hảo vì khi tên sản phẩm ở phần text giữa có độ dài ngắn khác nhau, bạn chỉ cần đặt thuộc tính margin-top: auto; cho nút bấm ở dưới cùng. Cơ chế của Flexbox sẽ tự động đẩy nút đó dính chặt vào đáy của card sản phẩm, giúp các nút bấm ở các card bên cạnh luôn thẳng hàng với nhau.
