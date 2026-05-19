@@ -128,3 +128,17 @@ Câu C1:
 3. Layout blog: Main content + SidebarLựa chọn: Grid (hoặc Flexbox tùy độ phức tạp, nhưng Grid tối ưu hơn cho bộ khung lớn)Giải thích ngắn gọn: Bản chất của cấu trúc trang (Page Layout) tổng thể thường dựa trên các vùng cố định. Dùng Grid giúp bạn quy hoạch rõ ràng độ rộng của hai vùng bằng grid-template-columns: 1fr 300px; (hoặc tỷ lệ phần trăm) và dễ dàng kiểm soát khoảng cách giữa chúng bằng thuộc tính gap mà không lo vỡ bố cục khi thay đổi nội dung bên trong.
 4. Footer với 4 cột thông tinLựa chọn: Grid (Dành cho layout cố định) hoặc Flexbox (Nếu muốn co giãn sang thiết bị di động) $\rightarrow$ Grid được khuyến khích hơn cho màn hình lớn.Giải thích ngắn gọn: Việc chia chính xác 4 cột có độ rộng bằng nhau hoặc theo tỷ lệ cố định là thế mạnh của Grid (grid-template-columns: repeat(4, 1fr);). Nó đảm bảo các cột thẳng hàng tuyệt đối từ trên xuống dưới. Tuy nhiên, khi chuyển sang màn hình nhỏ (Responsive), Grid đổi sang repeat(2, 1fr) hoặc 1fr cực kỳ gọn gàng.
 5. Card sản phẩm (Ảnh trên, Text giữa, Nút dưới — Nút luôn dính đáy)Lựa chọn: FlexboxGiải thích ngắn gọn: Đây là layout sắp xếp theo 1 chiều dọc (flex-direction: column). Flexbox là lựa chọn hoàn hảo vì khi tên sản phẩm ở phần text giữa có độ dài ngắn khác nhau, bạn chỉ cần đặt thuộc tính margin-top: auto; cho nút bấm ở dưới cùng. Cơ chế của Flexbox sẽ tự động đẩy nút đó dính chặt vào đáy của card sản phẩm, giúp các nút bấm ở các card bên cạnh luôn thẳng hàng với nhau.
+
+Câu C2:
+
+Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+Nguyên nhân:
+Mặc dù các khối .card có chiều cao bằng nhau nhờ cơ chế mặc định align-items: stretch của Flexbox, nhưng bên trong bản thân mỗi .card chưa được thiết lập mô hình Flexbox. Do đó, khi tựa đề h3 của sản phẩm có độ dài ngắn khác nhau (1 dòng so với 2, 3 dòng), phần nội dung text sẽ đẩy nút .btn lên xuống tự do, không thẳng hàng ở đáy.
+
+Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong 100vh, nhưng item vẫn dính góc trái trên
+Nguyên nhân:
+Thuộc tính text-align: center; thiết lập ở .hero-content chỉ có tác dụng căn giữa các phần tử nội dung dạng văn bản (inline) nằm bên trong khối content đó. Bản thân container .hero dù đã bật display: flex; nhưng chưa hề được ra lệnh phải căn chỉnh các phần tử con của nó như thế nào trên 2 trục. Mặc định, các phần tử flex item luôn bắt đầu từ góc trái trên (flex-start).
+
+Lỗi 3: Sidebar bị co lại khi content quá dài
+Nguyên nhân:
+Mặc định trong Flexbox, tất cả các flex items đều có thuộc tính flex-shrink: 1;. Khi vùng nội dung .content có văn bản quá dài, hoặc chứa các phần tử kích thước lớn (như bảng số liệu, ảnh), nó sẽ tạo áp lực và ép container cha dồn không gian. Do .sidebar được phép co lại (flex-shrink: 1), Flexbox sẽ tự động "bóp" độ rộng của sidebar nhỏ hơn mức 250px ban đầu để nhường chỗ cho nội dung.
