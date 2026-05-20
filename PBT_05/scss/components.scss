@@ -1,0 +1,58 @@
+.product-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    @include card-shadow; 
+
+    .img-container {
+        background-color: #f1f5f9;
+        overflow: hidden;
+        border-radius: 4px;
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .product-name {
+        font-family: $font-primary;
+        font-size: 15px;
+        margin: $spacing-sm 0;
+        color: $secondary-color;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+
+        .img-container img {
+            transform: scale(1.05);
+        }
+    }
+
+    &.featured {
+        border: 2px solid $primary-color;
+        background-color: #f8fafc;
+    }
+}
+
+.btn-buy {
+    width: 100%;
+    background-color: $primary-color;
+    color: #ffffff;
+    border: none;
+    padding: ($spacing-sm + 2) 0;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: auto; // Dính đáy
+    
+    &:hover {
+        background-color: darkbackground($primary-color, 10%);
+        transform: scale(1.02);
+    }
+}
