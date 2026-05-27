@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Công việc Cá nhân</title>
+    <!-- Nhúng file CSS từ thư mục css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Tiêu đề ứng dụng -->
+        <h1>Quản lý Công việc Cá nhân</h1>
+
+        <!-- Thanh chức năng & Khu vực hiển thị thông báo -->
+        <div class="action-bar">
+            <button class="btn btn-add" id="btn-open-modal">➕ Thêm công việc mới</button>
+            <div id="toast-msg"></div>
+        </div>
+
+        <!-- Bảng hiển thị danh sách dữ liệu công việc -->
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px; text-align: center;">STT</th>
+                    <th style="width: 60px; text-align: center;">Xong</th>
+                    <th>Tiêu đề công việc</th>
+                    <th>Mô tả ngắn</th>
+                    <th style="width: 130px;">Hạn hoàn thành</th>
+                    <th style="width: 120px; text-align: center;">Mức ưu tiên</th>
+                    <th style="width: 150px; text-align: center;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="todo-table-body">
+                <!-- Dữ liệu render động từ JS -->
+            </tbody>
+        </table>
+
+        <!-- Khu vực hiển thị thống kê -->
+        <div class="statistics-box">
+            <div class="stat-card total">
+                <h3>Tổng công việc</h3>
+                <p id="stat-total">0</p>
+            </div>
+            <div class="stat-card completed">
+                <h3>Đã hoàn thành</h3>
+                <p id="stat-completed">0</p>
+            </div>
+            <div class="stat-card pending">
+                <h3>Chưa hoàn thành</h3>
+                <p id="stat-pending">0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup/Modal Form (Dùng chung cho cả Thêm và Sửa) -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Thêm Công Việc Mới</h2>
+                <button class="btn btn-close" id="btn-close-modal">✖</button>
+            </div>
+            <form id="todo-form">
+                <!-- Hidden input để phân biệt chế độ -->
+                <input type="hidden" id="form-mode" value="">
+
+                <div class="form-group">
+                    <label for="todo-title">Tiêu đề công việc *</label>
+                    <input type="text" id="todo-title" class="form-control" required placeholder="Ví dụ: Làm bài tập Javascript">
+                </div>
+                
+                <div class="form-group">
+                    <label for="todo-desc">Mô tả ngắn</label>
+                    <textarea id="todo-desc" class="form-control" rows="3" placeholder="Mô tả chi tiết nội dung công việc..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="todo-deadline">Hạn hoàn thành *</label>
+                    <input type="date" id="todo-deadline" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="todo-priority">Mức ưu tiên *</label>
+                    <select id="todo-priority" class="form-control" required>
+                        <option value="Cao">🔥 Cao</option>
+                        <option value="Trung bình" selected>⚡ Trung bình</option>
+                        <option value="Thấp">🌱 Thấp</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-submit" id="btn-submit-form">Lưu công việc</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Nhúng file xử lý logic JS -->
+    <script src="./js/QuanLy.js"></script>
+</body>
+</html>
