@@ -144,3 +144,117 @@ var html = `
     <span>Giá: ${price}đ</span>
 </div>
 `;
+
+Phần C
+
+Câu C1:
+
+- Lỗi 1 — Không kiểm tra input có phải số hay không
+Vấn đề
+tinhGiaGiamGia("100000", 20)
+
+"100000" là string, không phải number.
+
+JavaScript vẫn tự ép kiểu nên code chạy được, nhưng dễ gây lỗi về sau.
+
+Cách sửa
+
+Kiểm tra kiểu dữ liệu:
+
+if (typeof giaBan !== "number" || typeof phanTramGiam !== "number") {
+    return "Input phải là số"
+}
+
+- Lỗi 2 — Dùng var thay vì let hoặc const
+Vấn đề
+var giamGia
+
+var có function scope và dễ gây bug.
+
+Cách sửa
+const giamGia = giaBan * phanTramGiam / 100
+
+Vì giá trị không thay đổi nên dùng const.
+
+- Lỗi 3 — Dùng phép gán = thay vì so sánh
+Sai
+if (giaSauGiam = 0)
+
+Đây là gán giá trị 0 cho giaSauGiam, không phải so sánh.
+
+Hậu quả
+giaSauGiam bị đổi thành 0
+Điều kiện trả về false
+Không bao giờ in "Sản phẩm miễn phí!"
+Cách sửa
+if (giaSauGiam === 0)
+
+- Lỗi 4 — Thiếu dấu ;
+
+Không bắt buộc trong JS nhưng dễ gây lỗi khi code lớn.
+
+Ví dụ:
+
+return "Phần trăm giảm không hợp lệ"
+Cách sửa
+return "Phần trăm giảm không hợp lệ";
+
+- Lỗi 5 — Hàm có thể trả về string hoặc number
+Vấn đề
+return "Phần trăm giảm không hợp lệ"
+
+và:
+
+return giaSauGiam
+
+Một lúc trả string, một lúc trả number → khó xử lý.
+
+Cách sửa tốt hơn
+
+Có thể:
+
+throw Error
+hoặc luôn return object
+
+Ví dụ đơn giản:
+
+return null;
+
+hoặc:
+
+throw new Error("Phần trăm giảm không hợp lệ");
+
+- Lỗi 6 — Bug “ẩn” với var trong vòng lặp
+Code lỗi
+for (var i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i)
+    }, 1000)
+}
+User thường nghĩ output là
+Item 0
+Item 1
+Item 2
+Item 3
+Item 4
+Nhưng thực tế là
+Item 5
+Item 5
+Item 5
+Item 5
+Item 5
+Vì sao?
+var có function scope
+
+Sau khi vòng lặp kết thúc:
+
+i = 5
+
+setTimeout chạy sau 1 giây nên tất cả callback đều dùng cùng biến i.
+
+- Cách sửa bằng let
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("Item " + i);
+    }, 1000);
+}
