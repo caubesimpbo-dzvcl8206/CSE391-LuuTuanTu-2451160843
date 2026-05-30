@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Navigation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Keyboard Navigation Demo</h1>
+
+    <button id="openPalette" aria-label="Open command palette">
+        Ctrl + K
+    </button>
+</header>
+
+<div class="gallery" id="gallery"></div>
+
+<div id="modal" class="modal hidden">
+    <button id="closeModal" aria-label="Close modal">✕</button>
+    <img id="modalImage">
+</div>
+
+<div id="palette" class="palette hidden">
+    <input
+        id="commandInput"
+        type="text"
+        placeholder="Type a command..."
+        aria-label="Command search"
+    >
+
+    <ul id="commandList"></ul>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
